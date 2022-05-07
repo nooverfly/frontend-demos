@@ -42,7 +42,10 @@ function App() {
     } as MenuItem;
   };
 
-  const items: MenuItem[] = [getItem("RxJS", "rxjs")];
+  const items: MenuItem[] = [
+    getItem("RxJS", "rxjs"),
+    getItem("H5 pages", "pages"),
+  ];
 
   const backToMainAppHome = () => {
     navigate("/");
@@ -82,6 +85,7 @@ function App() {
           {microApps.map(({ path, name, baseroute, url }) => (
             <Route
               path={path}
+              key={path}
               element={
                 <ReactChild name={name} baseroute={baseroute} url={url} />
               }
