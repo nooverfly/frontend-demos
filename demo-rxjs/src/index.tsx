@@ -4,16 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { HashRouter as Router } from "react-router-dom";
-import microApp from "@micro-zoe/micro-app";
 
-microApp.start();
-
+console.log(window.__MICRO_APP_BASE_ROUTE__);
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Router>
+    <Router basename={window.__MICRO_APP_BASE_ROUTE__ || "/"}>
       <App />
     </Router>
   </React.StrictMode>
