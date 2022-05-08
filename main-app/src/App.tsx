@@ -44,6 +44,7 @@ function App() {
 
   const items: MenuItem[] = [
     getItem("RxJS", "rxjs"),
+    getItem("Antdv", "antdv"),
     getItem("H5 pages", "pages"),
   ];
 

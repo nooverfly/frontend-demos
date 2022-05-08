@@ -6,6 +6,12 @@ const development = [
     url: "http://localhost:4000/frontend-demos/demo-rxjs",
   },
   {
+    path: "/antdv/*",
+    name: "demo-antdv",
+    baseroute: "/antdv",
+    url: "http://localhost:5000/frontend-demos/demo-antdv",
+  },
+  {
     path: "/pages/*",
     name: "pages",
     baseroute: "/pages",
@@ -19,6 +25,12 @@ const production = [
     name: "demo-rxjs",
     baseroute: "/rxjs/",
     url: "https://nooverfly.github.io/frontend-demos/demo-rxjs",
+  },
+  {
+    path: "/antdv/*",
+    name: "demo-antdv",
+    baseroute: "/antdv",
+    url: "https://nooverfly.github.io/frontend-demos/demo-antdv",
   },
   {
     path: "/pages/*",
