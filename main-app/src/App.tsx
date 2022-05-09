@@ -12,12 +12,12 @@ const { Sider } = Layout;
 const getItem = (
   label: React.ReactNode,
   key: React.Key,
-  icon?: React.ReactNode,
+  // icon?: React.ReactNode,
   children?: any[]
 ) => {
   return {
     key,
-    icon,
+    // icon,
     children,
     label,
   };
@@ -36,7 +36,8 @@ function App() {
     : DoubleLeftOutlined;
 
   const jumpTo = ({ item, key, keyPath, domEvent }: any) => {
-    navigate(`/${key}/`);
+    const path = keyPath.reverse().join("/");
+    navigate(`/${path}`);
     setDrawerVisible(false);
   };
 
@@ -46,9 +47,17 @@ function App() {
 
   const [menus, setMenus] = useState<any[]>([]);
   useEffect(() => {
-    const items: any[] = window.__micro_menus__.map((menu: any) =>
-      getItem(menu.label, menu.key)
-    );
+    const items: any[] = window.__micro_menus__.map((menu: any) => {
+      if (menu.children) {
+        return getItem(
+          menu.label,
+          menu.key,
+          menu.children.map((m: any) => getItem(m.label, m.key))
+        );
+      } else {
+        return getItem(menu.label, menu.key);
+      }
+    });
     setMenus(items);
   }, []);
 

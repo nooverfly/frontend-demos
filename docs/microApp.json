@@ -8,6 +8,36 @@
         "url": "http://localhost:4000/frontend-demos/demo-rxjs"
       },
       {
+        "path": "/antv/x6/*",
+        "name": "demo-x6",
+        "baseroute": "/antv/x6/",
+        "url": "http://localhost:4000/frontend-demos/demo-antv/demo-x6"
+      },
+      {
+        "path": "/antv/g6/*",
+        "name": "demo-g6",
+        "baseroute": "/antv/g6/",
+        "url": "http://localhost:4000/frontend-demos/demo-antv/demo-g6"
+      },
+      {
+        "path": "/antv/g2/*",
+        "name": "demo-g2",
+        "baseroute": "/antv/g2/",
+        "url": "http://localhost:4000/frontend-demos/demo-antv/demo-g2"
+      },
+      {
+        "path": "/antv/l7/*",
+        "name": "demo-l7",
+        "baseroute": "/antv/l7/",
+        "url": "http://localhost:4000/frontend-demos/demo-antv/demo-l7"
+      },
+      {
+        "path": "/canvas/*",
+        "name": "demo-canvas",
+        "baseroute": "/canvas/",
+        "url": "http://localhost:4000/frontend-demos/demo-canvas"
+      },
+      {
         "path": "/echarts/*",
         "name": "demo-echarts",
         "baseroute": "/echarts/",
@@ -34,6 +64,36 @@
         "url": "https://nooverfly.github.io/frontend-demos/demo-rxjs"
       },
       {
+        "path": "/antv/x6/*",
+        "name": "demo-x6",
+        "baseroute": "/antv/x6/",
+        "url": "https://nooverfly.github.io/frontend-demos/demo-antv/demo-x6"
+      },
+      {
+        "path": "/antv/g6/*",
+        "name": "demo-g6",
+        "baseroute": "/antv/g6/",
+        "url": "https://nooverfly.github.io/frontend-demos/demo-antv/demo-g6"
+      },
+      {
+        "path": "/antv/g2/*",
+        "name": "demo-g2",
+        "baseroute": "/antv/g2/",
+        "url": "https://nooverfly.github.io/frontend-demos/demo-antv/demo-g2"
+      },
+      {
+        "path": "/antv/l7/*",
+        "name": "demo-l7",
+        "baseroute": "/antv/l7/",
+        "url": "https://nooverfly.github.io/frontend-demos/demo-antv/demo-l7"
+      },
+      {
+        "path": "/canvas/*",
+        "name": "demo-canvas",
+        "baseroute": "/canvas/",
+        "url": "https://nooverfly.github.io/frontend-demos/demo-canvas"
+      },
+      {
         "path": "/echarts/*",
         "name": "demo-echarts",
         "baseroute": "/echarts/",
@@ -57,6 +117,32 @@
     {
       "label": "RxJS",
       "key": "rxjs"
+    },
+    {
+      "label": "AntV",
+      "key": "antv",
+      "children": [
+        {
+          "label": "X6",
+          "key": "x6"
+        },
+        {
+          "label": "g6",
+          "key": "g6"
+        },
+        {
+          "label": "g2",
+          "key": "g2"
+        },
+        {
+          "label": "l7",
+          "key": "l7"
+        }
+      ]
+    },
+    {
+      "label": "Canvas",
+      "key": "canvas"
     },
     {
       "label": "Echarts",

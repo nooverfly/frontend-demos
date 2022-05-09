@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/frontend-demos/demo-canvas/static/css/main.21cd19ca.css",
+    "main.js": "/frontend-demos/demo-canvas/static/js/main.659bc80c.js",
+    "index.html": "/frontend-demos/demo-canvas/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.21cd19ca.css",
+    "static/js/main.659bc80c.js"
+  ]
+}

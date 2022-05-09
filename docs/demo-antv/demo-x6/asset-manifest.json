@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/frontend-demos/demo-antv/demo-x6/static/css/main.3940ac73.css",
+    "main.js": "/frontend-demos/demo-antv/demo-x6/static/js/main.4c96557d.js",
+    "index.html": "/frontend-demos/demo-antv/demo-x6/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.3940ac73.css",
+    "static/js/main.4c96557d.js"
+  ]
+}
