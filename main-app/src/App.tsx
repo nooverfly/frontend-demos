@@ -2,16 +2,29 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import { Drawer, Layout, Menu, MenuProps } from "antd";
 import { DoubleLeftOutlined, DoubleRightOutlined } from "@ant-design/icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MainAppHome from "./pages/home";
 import ReactChild from "./pages/react-child";
-import microApps from "./data/microApps";
+// import microApps from "./data/microApps";
 
 const { Sider } = Layout;
-type MenuItem = Required<MenuProps>["items"][number];
+
+const getItem = (
+  label: React.ReactNode,
+  key: React.Key,
+  icon?: React.ReactNode,
+  children?: any[]
+) => {
+  return {
+    key,
+    icon,
+    children,
+    label,
+  };
+};
 
 function App() {
-  const [drawerVisible, setDrawerVisible] = useState(true);
+  const [drawerVisible, setDrawerVisible] = useState(false);
   const navigate = useNavigate();
 
   const openDrawer = () => {
@@ -27,30 +40,17 @@ function App() {
     setDrawerVisible(false);
   };
 
-  const getItem = (
-    label: React.ReactNode,
-    key: React.Key,
-    icon?: React.ReactNode,
-    children?: MenuItem[]
-  ): MenuItem => {
-    return {
-      key,
-      icon,
-      children,
-      label,
-      onClick: jumpTo,
-    } as MenuItem;
-  };
-
-  const items: MenuItem[] = [
-    getItem("RxJS", "rxjs"),
-    getItem("Antdv", "antdv"),
-    getItem("H5 pages", "pages"),
-  ];
-
   const backToMainAppHome = () => {
     navigate("/");
   };
+
+  const [menus, setMenus] = useState<any[]>([]);
+  useEffect(() => {
+    const items: any[] = window.__micro_menus__.map((menu: any) =>
+      getItem(menu.label, menu.key)
+    );
+    setMenus(items);
+  }, []);
 
   return (
     <div className="wh100">
@@ -77,13 +77,13 @@ function App() {
             }}
             onClick={backToMainAppHome}
           ></div>
-          <Menu theme="light" mode="inline" items={items} />
+          <Menu theme="light" mode="inline" items={menus} onClick={jumpTo} />
         </Sider>
       </Drawer>
       <Layout className="wh100">
         <Routes>
           <Route path="/" element={<MainAppHome />}></Route>
-          {microApps.map(({ path, name, baseroute, url }) => (
+          {window.__micro_apps__.map(({ path, name, baseroute, url }) => (
             <Route
               path={path}
               key={path}

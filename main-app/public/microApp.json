@@ -1,0 +1,74 @@
+{
+  "apps": {
+    "development": [
+      {
+        "path": "/rxjs/*",
+        "name": "demo-rxjs",
+        "baseroute": "/rxjs/",
+        "url": "http://localhost:4000/frontend-demos/demo-rxjs"
+      },
+      {
+        "path": "/echarts/*",
+        "name": "demo-echarts",
+        "baseroute": "/echarts/",
+        "url": "http://localhost:5000/frontend-demos/demo-echarts"
+      },
+      {
+        "path": "/antdv/*",
+        "name": "demo-antdv",
+        "baseroute": "/antdv",
+        "url": "http://localhost:5000/frontend-demos/demo-antdv"
+      },
+      {
+        "path": "/pages/*",
+        "name": "pages",
+        "baseroute": "/pages",
+        "url": "http://localhost:5500/pages/index.html"
+      }
+    ],
+    "production": [
+      {
+        "path": "/rxjs/*",
+        "name": "demo-rxjs",
+        "baseroute": "/rxjs/",
+        "url": "https://nooverfly.github.io/frontend-demos/demo-rxjs"
+      },
+      {
+        "path": "/echarts/*",
+        "name": "demo-echarts",
+        "baseroute": "/echarts/",
+        "url": "https://nooverfly.github.io/frontend-demos/demo-echarts"
+      },
+      {
+        "path": "/antdv/*",
+        "name": "demo-antdv",
+        "baseroute": "/antdv",
+        "url": "https://nooverfly.github.io/frontend-demos/demo-antdv"
+      },
+      {
+        "path": "/pages/*",
+        "name": "pages",
+        "baseroute": "/pages",
+        "url": "https://nooverfly.github.io/frontend-demos/pages/index.html"
+      }
+    ]
+  },
+  "menus": [
+    {
+      "label": "RxJS",
+      "key": "rxjs"
+    },
+    {
+      "label": "Echarts",
+      "key": "echarts"
+    },
+    {
+      "label": "Antdv",
+      "key": "antdv"
+    },
+    {
+      "label": "H5 pages",
+      "key": "pages"
+    }
+  ]
+}

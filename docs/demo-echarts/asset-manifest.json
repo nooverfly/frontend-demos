@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/frontend-demos/demo-echarts/static/css/main.5c3b73f0.css",
+    "main.js": "/frontend-demos/demo-echarts/static/js/main.3bf09ce8.js",
+    "index.html": "/frontend-demos/demo-echarts/index.html",
+    "main.5c3b73f0.css.map": "/frontend-demos/demo-echarts/static/css/main.5c3b73f0.css.map",
+    "main.3bf09ce8.js.map": "/frontend-demos/demo-echarts/static/js/main.3bf09ce8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c3b73f0.css",
+    "static/js/main.3bf09ce8.js"
+  ]
+}
