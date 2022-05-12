@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/frontend-demos/demo-react/static/css/main.dfd10d05.css",
+    "main.js": "/frontend-demos/demo-react/static/js/main.3a02e42e.js",
+    "static/js/438.ece1978e.chunk.js": "/frontend-demos/demo-react/static/js/438.ece1978e.chunk.js",
+    "index.html": "/frontend-demos/demo-react/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.dfd10d05.css",
+    "static/js/main.3a02e42e.js"
+  ]
+}

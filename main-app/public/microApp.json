@@ -2,6 +2,12 @@
   "apps": {
     "development": [
       {
+        "path": "/react/*",
+        "name": "demo-react",
+        "baseroute": "/react/",
+        "url": "http://localhost:4000/frontend-demos/demo-react"
+      },
+      {
         "path": "/rxjs/*",
         "name": "demo-rxjs",
         "baseroute": "/rxjs/",
@@ -44,6 +50,18 @@
         "url": "http://localhost:5000/frontend-demos/demo-echarts"
       },
       {
+        "path": "/d3/*",
+        "name": "demo-d3",
+        "baseroute": "/d3/",
+        "url": "http://localhost:4000/frontend-demos/demo-d3"
+      },
+      {
+        "path": "/maptalks/*",
+        "name": "demo-maptalks",
+        "baseroute": "/maptalks/",
+        "url": "http://localhost:4000/frontend-demos/demo-maptalks"
+      },
+      {
         "path": "/antdv/*",
         "name": "demo-antdv",
         "baseroute": "/antdv",
@@ -57,6 +75,12 @@
       }
     ],
     "production": [
+      {
+        "path": "/react/*",
+        "name": "demo-react",
+        "baseroute": "/react/",
+        "url": "https://nooverfly.github.io/frontend-demos/demo-react"
+      },
       {
         "path": "/rxjs/*",
         "name": "demo-rxjs",
@@ -100,6 +124,18 @@
         "url": "https://nooverfly.github.io/frontend-demos/demo-echarts"
       },
       {
+        "path": "/d3/*",
+        "name": "demo-d3",
+        "baseroute": "/d3/",
+        "url": "https://nooverfly.github.io/frontend-demos/demo-d3"
+      },
+      {
+        "path": "/maptalks/*",
+        "name": "demo-maptalks",
+        "baseroute": "/maptalks/",
+        "url": "https://nooverfly.github.io/frontend-demos/demo-maptalks"
+      },
+      {
         "path": "/antdv/*",
         "name": "demo-antdv",
         "baseroute": "/antdv",
@@ -114,6 +150,10 @@
     ]
   },
   "menus": [
+    {
+      "label": "React",
+      "key": "react"
+    },
     {
       "label": "RxJS",
       "key": "rxjs"
@@ -147,6 +187,14 @@
     {
       "label": "Echarts",
       "key": "echarts"
+    },
+    {
+      "label": "d3",
+      "key": "d3"
+    },
+    {
+      "label": "maptalks",
+      "key": "maptalks"
     },
     {
       "label": "Antdv",

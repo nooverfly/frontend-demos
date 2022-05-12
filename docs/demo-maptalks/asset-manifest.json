@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/frontend-demos/demo-maptalks/static/css/main.21cd19ca.css",
+    "main.js": "/frontend-demos/demo-maptalks/static/js/main.cce77ded.js",
+    "index.html": "/frontend-demos/demo-maptalks/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.21cd19ca.css",
+    "static/js/main.cce77ded.js"
+  ]
+}

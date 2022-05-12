@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/frontend-demos/demo-d3/static/css/main.21cd19ca.css",
+    "main.js": "/frontend-demos/demo-d3/static/js/main.a2612c5a.js",
+    "index.html": "/frontend-demos/demo-d3/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.21cd19ca.css",
+    "static/js/main.a2612c5a.js"
+  ]
+}
