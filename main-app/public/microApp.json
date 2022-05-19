@@ -1,207 +1,167 @@
 {
-  "apps": {
-    "development": [
-      {
-        "path": "/react/*",
-        "name": "demo-react",
-        "baseroute": "/react/",
-        "url": "http://localhost:4000/frontend-demos/demo-react"
-      },
-      {
-        "path": "/rxjs/*",
-        "name": "demo-rxjs",
-        "baseroute": "/rxjs/",
-        "url": "http://localhost:4000/frontend-demos/demo-rxjs"
-      },
-      {
-        "path": "/antv/x6/*",
-        "name": "demo-x6",
-        "baseroute": "/antv/x6/",
-        "url": "http://localhost:4000/frontend-demos/demo-antv/demo-x6"
-      },
-      {
-        "path": "/antv/g6/*",
-        "name": "demo-g6",
-        "baseroute": "/antv/g6/",
-        "url": "http://localhost:4000/frontend-demos/demo-antv/demo-g6"
-      },
-      {
-        "path": "/antv/g2/*",
-        "name": "demo-g2",
-        "baseroute": "/antv/g2/",
-        "url": "http://localhost:4000/frontend-demos/demo-antv/demo-g2"
-      },
-      {
-        "path": "/antv/l7/*",
-        "name": "demo-l7",
-        "baseroute": "/antv/l7/",
-        "url": "http://localhost:4000/frontend-demos/demo-antv/demo-l7"
-      },
-      {
-        "path": "/canvas/*",
-        "name": "demo-canvas",
-        "baseroute": "/canvas/",
-        "url": "http://localhost:4000/frontend-demos/demo-canvas"
-      },
-      {
-        "path": "/echarts/*",
-        "name": "demo-echarts",
-        "baseroute": "/echarts/",
-        "url": "http://localhost:5000/frontend-demos/demo-echarts"
-      },
-      {
-        "path": "/d3/*",
-        "name": "demo-d3",
-        "baseroute": "/d3/",
-        "url": "http://localhost:4000/frontend-demos/demo-d3"
-      },
-      {
-        "path": "/maptalks/*",
-        "name": "demo-maptalks",
-        "baseroute": "/maptalks/",
-        "url": "http://localhost:4000/frontend-demos/demo-maptalks"
-      },
-      {
-        "path": "/antdv/*",
-        "name": "demo-antdv",
-        "baseroute": "/antdv",
-        "url": "http://localhost:5000/frontend-demos/demo-antdv"
-      },
-      {
-        "path": "/pages/*",
-        "name": "pages",
-        "baseroute": "/pages",
-        "url": "http://localhost:5500/pages/index.html"
+  "apps": [
+    {
+      "path": "/react/*",
+      "name": "demo-react",
+      "baseroute": "/react/",
+      "url": {
+        "dev": "http://localhost:4000/frontend-demos/demo-react",
+        "prod": "https://nooverfly.github.io/frontend-demos/demo-react"
       }
-    ],
-    "production": [
-      {
-        "path": "/react/*",
-        "name": "demo-react",
-        "baseroute": "/react/",
-        "url": "https://nooverfly.github.io/frontend-demos/demo-react"
-      },
-      {
-        "path": "/rxjs/*",
-        "name": "demo-rxjs",
-        "baseroute": "/rxjs/",
-        "url": "https://nooverfly.github.io/frontend-demos/demo-rxjs"
-      },
-      {
-        "path": "/antv/x6/*",
-        "name": "demo-x6",
-        "baseroute": "/antv/x6/",
-        "url": "https://nooverfly.github.io/frontend-demos/demo-antv/demo-x6"
-      },
-      {
-        "path": "/antv/g6/*",
-        "name": "demo-g6",
-        "baseroute": "/antv/g6/",
-        "url": "https://nooverfly.github.io/frontend-demos/demo-antv/demo-g6"
-      },
-      {
-        "path": "/antv/g2/*",
-        "name": "demo-g2",
-        "baseroute": "/antv/g2/",
-        "url": "https://nooverfly.github.io/frontend-demos/demo-antv/demo-g2"
-      },
-      {
-        "path": "/antv/l7/*",
-        "name": "demo-l7",
-        "baseroute": "/antv/l7/",
-        "url": "https://nooverfly.github.io/frontend-demos/demo-antv/demo-l7"
-      },
-      {
-        "path": "/canvas/*",
-        "name": "demo-canvas",
-        "baseroute": "/canvas/",
-        "url": "https://nooverfly.github.io/frontend-demos/demo-canvas"
-      },
-      {
-        "path": "/echarts/*",
-        "name": "demo-echarts",
-        "baseroute": "/echarts/",
-        "url": "https://nooverfly.github.io/frontend-demos/demo-echarts"
-      },
-      {
-        "path": "/d3/*",
-        "name": "demo-d3",
-        "baseroute": "/d3/",
-        "url": "https://nooverfly.github.io/frontend-demos/demo-d3"
-      },
-      {
-        "path": "/maptalks/*",
-        "name": "demo-maptalks",
-        "baseroute": "/maptalks/",
-        "url": "https://nooverfly.github.io/frontend-demos/demo-maptalks"
-      },
-      {
-        "path": "/antdv/*",
-        "name": "demo-antdv",
-        "baseroute": "/antdv",
-        "url": "https://nooverfly.github.io/frontend-demos/demo-antdv"
-      },
-      {
-        "path": "/pages/*",
-        "name": "pages",
-        "baseroute": "/pages",
-        "url": "https://nooverfly.github.io/frontend-demos/pages/index.html"
+    },
+    {
+      "path": "/rxjs/*",
+      "name": "demo-rxjs",
+      "baseroute": "/rxjs/",
+      "url": {
+        "dev": "http://localhost:4000/frontend-demos/demo-rxjs",
+        "prod": "https://nooverfly.github.io/frontend-demos/demo-rxjs"
       }
-    ]
-  },
+    },
+    {
+      "path": "/antv/x6/*",
+      "name": "demo-x6",
+      "baseroute": "/antv/x6/",
+      "url": {
+        "dev": "http://localhost:4000/frontend-demos/demo-antv/demo-x6",
+        "prod": "https://nooverfly.github.io/frontend-demos/demo-antv/demo-x6"
+      }
+    },
+    {
+      "path": "/antv/g6/*",
+      "name": "demo-g6",
+      "baseroute": "/antv/g6/",
+      "url": {
+        "dev": "http://localhost:4000/frontend-demos/demo-antv/demo-g6",
+        "prod": "https://nooverfly.github.io/frontend-demos/demo-antv/demo-g6"
+      }
+    },
+    {
+      "path": "/antv/g2/*",
+      "name": "demo-g2",
+      "baseroute": "/antv/g2/",
+      "url": {
+        "dev": "http://localhost:4000/frontend-demos/demo-antv/demo-g2",
+        "prod": "https://nooverfly.github.io/frontend-demos/demo-antv/demo-g2"
+      }
+    },
+    {
+      "path": "/antv/l7/*",
+      "name": "demo-l7",
+      "baseroute": "/antv/l7/",
+      "url": {
+        "dev": "http://localhost:4000/frontend-demos/demo-antv/demo-l7",
+        "prod": "https://nooverfly.github.io/frontend-demos/demo-antv/demo-l7"
+      }
+    },
+    {
+      "path": "/canvas/*",
+      "name": "demo-canvas",
+      "baseroute": "/canvas/",
+      "url": {
+        "dev": "http://localhost:4000/frontend-demos/demo-canvas",
+        "prod": "https://nooverfly.github.io/frontend-demos/demo-canvas"
+      }
+    },
+    {
+      "path": "/echarts/*",
+      "name": "demo-echarts",
+      "baseroute": "/echarts/",
+      "url": {
+        "dev": "http://localhost:5000/frontend-demos/demo-echarts",
+        "prod": "https://nooverfly.github.io/frontend-demos/demo-echarts"
+      }
+    },
+    {
+      "path": "/d3/*",
+      "name": "demo-d3",
+      "baseroute": "/d3/",
+      "url": {
+        "dev": "http://localhost:4000/frontend-demos/demo-d3",
+        "prod": "https://nooverfly.github.io/frontend-demos/demo-d3"
+      }
+    },
+    {
+      "path": "/maptalks/*",
+      "name": "demo-maptalks",
+      "baseroute": "/maptalks/",
+      "url": {
+        "dev": "http://localhost:4000/frontend-demos/demo-maptalks",
+        "prod": "https://nooverfly.github.io/frontend-demos/demo-maptalks"
+      }
+    },
+    {
+      "path": "/antdv/*",
+      "name": "demo-antdv",
+      "baseroute": "/antdv",
+      "url": {
+        "dev": "http://localhost:5000/frontend-demos/demo-antdv",
+        "prod": "https://nooverfly.github.io/frontend-demos/demo-antdv"
+      }
+    },
+    {
+      "path": "/pages/*",
+      "name": "pages",
+      "baseroute": "/pages",
+      "url": {
+        "dev": "http://localhost:5500/pages/index.html",
+        "prod": "https://nooverfly.github.io/frontend-demos/pages/index.html"
+      }
+    }
+  ],
   "menus": [
     {
-      "label": "React",
+      "label": "demo-react",
       "key": "react"
     },
     {
-      "label": "RxJS",
+      "label": "demo-rxJS",
       "key": "rxjs"
     },
     {
-      "label": "AntV",
+      "label": "demo-antV",
       "key": "antv",
       "children": [
         {
-          "label": "X6",
+          "label": "demo-x6",
           "key": "x6"
         },
         {
-          "label": "g6",
+          "label": "demo-g6",
           "key": "g6"
         },
         {
-          "label": "g2",
+          "label": "demo-g2",
           "key": "g2"
         },
         {
-          "label": "l7",
+          "label": "demo-l7",
           "key": "l7"
         }
       ]
     },
     {
-      "label": "Canvas",
+      "label": "demo-canvas",
       "key": "canvas"
     },
     {
-      "label": "Echarts",
+      "label": "demo-echarts",
       "key": "echarts"
     },
     {
-      "label": "d3",
+      "label": "demo-d3",
       "key": "d3"
     },
     {
-      "label": "maptalks",
+      "label": "demo-maptalks",
       "key": "maptalks"
     },
     {
-      "label": "Antdv",
+      "label": "demo-antdv",
       "key": "antdv"
     },
     {
-      "label": "H5 pages",
+      "label": "pages",
       "key": "pages"
     }
   ]

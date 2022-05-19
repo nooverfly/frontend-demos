@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scheduler</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      /**
+       * 耗时的递归
+       **/
+      function fibonacci(n) {
+        if (n === 0) return 0;
+        else if (n === 1) return 1;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+      }
+      /**
+       * 耗时任务
+       **/
+      const timeConsumingTask = (n) => {
+        const res = fibonacci(n);
+        return res;
+      };
+
+      /* let count = 0;
+      const addCount = () => {
+        count += 1;
+        console.log("count=", count);
+      };
+      const $root = document.getElementById("root"); */
+
+      /* function render(times) {
+        setTimeout(() => {
+          let currentTime = 0;
+          while (count < times && currentTime < 10) {
+            currentTime++;
+            timeConsumingTask(25);
+            addCount();
+            $root.innerText = "当前计算个数：" + count;
+          }
+          if (count < times) {
+            render(times);
+          }
+        }, 15);
+      } */
+
+      /* function renderWithFiber(times) {
+        const run = (deadline) => {
+          while (
+            (deadline.timeRemaining() > 0 || deadline.didTimeout) &&
+            count < times
+          ) {
+            timeConsumingTask(25);
+            addCount();
+            $root.innerText = "当前计算个数：" + count;
+          }
+          if (count < times) {
+            requestIdleCallback(run);
+          }
+        };
+        requestIdleCallback(run);
+      }
+
+      renderWithFiber(5000); */
+
+      const channel = new MessageChannel();
+      channel.port1.onmessage = (e) => {
+        console.log(e.data, performance.now());
+      };
+      for (let i = 0; i < 20; i++) {
+        new Promise((resolve, reject) => {
+          channel.port2.postMessage("***********");
+          resolve("+++++");
+        }).then((resp) => {
+          console.log(resp);
+        });
+      }
+
+     /*  new Promise((resolve, reject) => {
+        resolve("+++");
+      }).then(console.log); */
+    </script>
+  </body>
+</html>

@@ -10,11 +10,16 @@ fetch("/frontend-demos/microApp.json")
   .then((resp) => resp.json())
   .then((data: any) => {
     const { apps, menus } = data;
-    window.__micro_apps__ =
-      apps[
-        process.env.NODE_ENV === "development" ? "development" : "production"
-      ];
+    window.__micro_apps__ = apps.map(({ path, name, baseroute, url }: any) => {
+      return {
+        path: path,
+        name: name,
+        baseroute: baseroute,
+        url: process.env.NODE_ENV === "development" ? url.dev : url.prod,
+      };
+    });
     window.__micro_menus__ = menus;
+    window.__current_app__ = "main";
 
     microApp.start();
 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>redux-base</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <p>
+        Clicked: <span id="value">0</span> times
+        <button id="increment">+</button>
+        <button id="decrement">-</button>
+        <button id="incrementIfOdd">Increment if odd</button>
+        <button id="incrementAsync">Increment async</button>
+      </p>
+    </div>
+    <script>
+      const initialState = {
+        value: 0,
+      };
+
+      function counterReducer(state = initialState, action) {
+        switch (action.type) {
+          case "counter/incremented":
+            return {
+              ...state,
+              value: state.value + 1,
+            };
+          case "counter/decremented":
+            return {
+              ...state,
+              value: state.value - 1,
+            };
+          default:
+            return state;
+        }
+      }
+
+      const store = Redux.createStore(counterReducer);
+      const valueEl = document.getElementById("value");
+
+      function render() {
+        const state = store.getState();
+        valueEl.innerText = state.value;
+      }
+
+      render();
+
+      store.subscribe(render);
+
+      document.getElementById("increment").addEventListener("click", () => {
+        store.dispatch({ type: "counter/incremented" });
+      });
+
+      document.getElementById("decrement").addEventListener("click", () => {
+        store.dispatch({ type: "counter/decremented" });
+      });
+
+      document
+        .getElementById("incrementIfOdd")
+        .addEventListener("click", () => {
+          if (store.getState().value % 2 !== 0) {
+            store.dispatch({ type: "counter/incremented" });
+          }
+        });
+
+      document
+        .getElementById("incrementAsync")
+        .addEventListener("click", () => {
+          setTimeout(() => {
+            store.dispatch({ type: "counter/incremented" });
+          }, 1000);
+        });
+    </script>
+  </body>
+</html>

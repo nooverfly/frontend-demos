@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="output">iFrame body</p>
+    <script>
+      const output = document.querySelector(".output");
+      window.addEventListener("message", onMessage);
+      function onMessage(e) {
+        console.log(e);
+        output.innerHTML = e.data;
+        e.ports[0].postMessage("Message back from the IFrame");
+      }
+    </script>
+  </body>
+</html>
