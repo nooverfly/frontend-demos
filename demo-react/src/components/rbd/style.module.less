@@ -1,0 +1,130 @@
+@import "../../styles/constant.less";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: @grid;
+  border: @grid;
+  padding-bottom: 0;
+  transition: background-color 0.2s ease, opacity 0.1s ease;
+  user-select: none;
+  width: 250px;
+}
+
+.title {
+  padding: @grid;
+  transition: background-color ease 0.2s;
+  flex-grow: 1;
+  user-select: none;
+  position: relative;
+  &:focus {
+    outline: 2px solid @P100;
+    outline-offset: 2px;
+  }
+}
+
+.drop-zone {
+  min-height: @scrollContainerHeight;
+  padding-bottom: @grid;
+}
+
+.container {
+  border-radius: @borderRadius;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  padding: @grid;
+  min-height: @imageSize;
+  margin-bottom: @grid;
+  user-select: none;
+  /* anchor overrides */
+  color: @N900;
+  display: flex;
+  &:hover,
+  &:active {
+    color: @N900;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.avatar {
+  width: @imageSize;
+  height: @imageSize;
+  border-radius: 50%;
+  margin-right: @grid;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.clone-badge {
+  background: @G100;
+  bottom: @halfGrid;
+  border: 2px solid @G200;
+  border-radius: 50%;
+  box-sizing: border-box;
+  font-size: 10px;
+  position: absolute;
+  right: @onethirdImageSize;
+  top: @onethirdImageSize;
+  transform: rotate(40deg);
+  height: @imageSize;
+  width: @imageSize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  flex-grow: 1;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.block-quote {
+  &::before {
+    content: open-quote;
+  }
+  &::after {
+    content: close-quote;
+  }
+}
+
+.footer {
+  display: flex;
+  margin-top: @grid;
+  align-items: center;
+}
+
+.author {
+  flex-grow: 0;
+  margin: 0;
+  border-radius: @borderRadius;
+  font-weight: normal;
+  padding: @halfGrid;
+}
+
+.quote-id {
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 0;
+  font-weight: normal;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+.scroll-container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: @scrollContainerHeight;
+}
+
+.root {
+  padding-top: @halfGrid;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}

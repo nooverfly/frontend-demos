@@ -1,17 +1,17 @@
-import { CHANGE_LIST } from './constants';
+import { CHANGE_LIST } from "./constants";
 
 const defaultState = {
-	newsList: []
-}
+  newsList: [],
+};
 
-export default (state = defaultState, action) => {
-	switch(action.type) {
-		case CHANGE_LIST:
-			return {
-				...state,
-				newsList: action.list
-			}
-		default:
-			return state;
-	}
+export default function (state = defaultState, action) {
+  switch (action.type) {
+    case CHANGE_LIST:
+      return {
+        ...state,
+        newsList: action.list,
+      };
+    default:
+      return state;
+  }
 }

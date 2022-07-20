@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <audio id="audio" src="./报警声1.wav" loop></audio>
+    <script>
+      const audio = document.getElementById("audio");
+      setTimeout(() => {
+        audio.play();
+        setTimeout(() => {
+          audio.pause();
+        }, 9000);
+      }, 3000);
+    </script>
+  </body>
+</html>

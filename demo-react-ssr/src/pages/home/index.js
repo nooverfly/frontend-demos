@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Header from "../../components/Header";
 import { getHomeList } from "./store/actions";
@@ -11,41 +11,43 @@ import { getHomeList } from "./store/actions";
     </div>
   );
 }; */
-
-class Home extends Component {
-  getList() {
-    const { list } = this.props;
+const Home = ({ list = [], getHomeList }) => {
+  const getList = () => {
     return list.map((item) => <div key={item.id}>{item.name}</div>);
-  }
+  };
 
-  render() {
-    return (
-      <div>
-        <Header />
-        {this.getList()}
-        <button
-          onClick={() => {
-            alert("click1");
-          }}
-        >
-          click
-        </button>
-      </div>
-    );
-  }
+  /* useEffect(() => {
+    getHomeList();
+  }, []); */
 
-  componentDidMount() {
-    this.props.getHomeList();
-  }
-}
+  return (
+    <div>
+      <Header />
+      {getList()}
+      <button
+        onClick={() => {
+          alert("click1");
+        }}
+      >
+        click
+      </button>
+    </div>
+  );
+};
+
+Home.loadData = (store) => {
+  // 这个函数，负责在服务器端渲染之前，把这个路由需要的数据提前加载好
+  return store.dispatch(getHomeList());
+};
+
 const mapStateToProps = (state) => ({
   list: state.home.newsList,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+/* const mapDispatchToProps = (dispatch) => ({
   getHomeList() {
     dispatch(getHomeList());
   },
-});
+}); */
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps /* , mapDispatchToProps */)(Home);

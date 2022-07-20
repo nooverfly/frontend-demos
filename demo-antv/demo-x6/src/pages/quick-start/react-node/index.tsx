@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import "@antv/x6-react-shape";
 import { Graph } from "@antv/x6";
 import MyReactNode from "./MyReactNode";
+import { Provider } from "react-redux";
+import store from "../../../store";
 
 /* Graph.registerNode("my-node", {
   inherit: "react-shape",
@@ -14,7 +16,7 @@ import MyReactNode from "./MyReactNode";
 
 Graph.registerReactComponent("my-node", (node) => {
   const data = node.getData();
-  return <MyReactNode text={data.text} />;
+  return <MyReactNode text={data.text} changeContent={data.changeContent} />;
 });
 
 const data = {
@@ -59,6 +61,10 @@ const ReactNodeQs = () => {
       return;
     }
 
+    const changeContent = () => {
+      console.log("content");
+    };
+
     if (rootNodeRef.current) {
       const graph = new Graph({
         container: rootNodeRef.current,
@@ -67,7 +73,20 @@ const ReactNodeQs = () => {
         grid: true,
       });
       graphRef.current = graph;
-      graph.fromJSON(data);
+      // graph.fromJSON(data);
+      const rect = graph.addNode({
+        id: "node1",
+        x: 40,
+        y: 40,
+        width: 80,
+        height: 40,
+        shape: "react-shape",
+        component: "my-node",
+        data: {
+          text: "source",
+          changeContent: changeContent,
+        },
+      });
 
       graph.on("btn:click", (...rest: any) => {
         console.log(rest);
@@ -83,7 +102,9 @@ const ReactNodeQs = () => {
     }
   }, []);
 
-  return <div ref={rootNodeRef}></div>;
+  return (
+    <div ref={rootNodeRef}></div>
+  );
 };
 
 export default ReactNodeQs;

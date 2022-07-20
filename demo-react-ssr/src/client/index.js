@@ -1,18 +1,27 @@
 import React from "react";
 import { hydrateRoot } from "react-dom/client";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import routes from "../Routes";
 import { getClientStore } from "../store";
 import { Provider } from "react-redux";
 
 const store = getClientStore();
-console.log(store);
 const App = () => {
   return (
     <Provider store={store}>
-      <div>
-        <Home />
-      </div>
+      <BrowserRouter>
+        <div>
+          <Routes>
+            {routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={<route.component />}
+              ></Route>
+            ))}
+          </Routes>
+        </div>
+      </BrowserRouter>
     </Provider>
   );
 };

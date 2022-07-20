@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReactShape } from "@antv/x6-react-shape";
+import { connect, useSelector } from "react-redux";
+import store from "../../../store";
 
-class MyReactNode extends React.Component<{
+/* class MyReactNode extends React.Component<{
   node?: ReactShape;
   text?: string;
 }> {
@@ -32,6 +34,30 @@ class MyReactNode extends React.Component<{
       </div>
     );
   }
-}
+} */
 
-export default MyReactNode;
+const MyReactNode = ({ text, changeContent, username }: any) => {
+  const [content, setContent] = useState<string>(text);
+
+  // const username = useSelector((state: any) => state.demoStore.username);
+
+  const clickHandler = () => {
+    setContent("abc");
+    changeContent();
+  };
+  return (
+    <div>
+      {content}
+      <button onClick={clickHandler}>按钮-{username}</button>
+    </div>
+  );
+};
+
+const mapStateToProps = (state: any) => ({
+  username: state.demoStore.username,
+});
+
+// @ts-ignore
+export default connect(mapStateToProps, null, null, {
+  context: store,
+})(MyReactNode);

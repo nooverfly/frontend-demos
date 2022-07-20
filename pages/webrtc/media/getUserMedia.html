@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getUserMedia</title>
+  </head>
+  <body>
+    <video id="myVideo"></video>
+    <script>
+      navigator.getUserMedia(
+        { audio: true, video: true },
+        function (stream) {
+          var video = document.getElementById("myVideo");
+          video.srcObject = stream;
+          video.onloadedmetadata = function (e) {
+            video.play();
+          };
+        },
+        function (err) {
+          console.log("The following error occurred: " + err.name);
+        }
+      );
+    </script>
+  </body>
+</html>

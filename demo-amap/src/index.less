@@ -1,0 +1,46 @@
+// 初始化样式
+@import "antd/lib/style/core/index.less";
+@import "antd/lib/grid/style/index.less";
+@import "antd/lib/form/style/index.less";
+// 手动按需引入的好处是可以控制样式的顺序，先引入antd组件的通用样式，再用tailwind的个性化样式覆盖通用样式，这样不需要增加个性化样式的选择器优先级
+// 例如 .ant-input-group-wrapper { width: 100% }
+// 通过 .w-40 { width: 10rem } 覆盖
+@import "antd/lib/table/style/index.less";
+@import "antd/lib/button/style/index.less";
+@import "antd/lib/pagination/style/index.less";
+@import "antd/lib/input/style/index.less";
+@import "antd/lib/input-number/style/index.less";
+@import "antd/lib/breadcrumb/style/index.less";
+@import "antd/lib/layout/style/index.less";
+@import "antd/lib/menu/style/index.less";
+@import "antd/lib/switch/style/index.less";
+@import "antd/lib/select/style/index.less";
+@import "antd/lib/tree-select/style/index.less";
+@import "antd/lib/tooltip/style/index.less";
+@import "antd/lib/radio/style/index.less";
+@import "antd/lib/tree/style/index.less";
+@import "antd/lib/tabs/style/index.less";
+@import "antd/lib/dropdown/style/index.less";
+@import "antd/lib/collapse/style/index.less";
+@import "antd/lib/modal/style/index.less";
+@import "antd/lib/message/style/index.less";
+@import "antd/lib/empty/style/index.less";
+@import "antd/lib/drawer/style/index.less";
+@import "antd/lib/upload/style/index.less";
+@import "antd/lib/checkbox/style/index.less";
+@import "antd/lib/list/style/index.less";
+@import "antd/lib/tag/style/index.less";
+@import "antd/lib/popconfirm/style/index.less";
+@import "antd/lib/typography/style/index.less";
+@import "antd/lib/divider/style/index.less";
+@import "antd/lib/space/style/index.less";
+@import "antd/lib/badge/style/index.less";
+@import "antd/lib/date-picker/style/index.less";
+@import "antd/lib/spin/style/index.less";
+@import "antd/lib/popover/style/index.less";
+@import "antd/lib/steps/style/index.less";
+@import "antd/lib/card/style/index.less";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

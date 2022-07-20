@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>media-constraint</title>
+  </head>
+  <body>
+    <video id="myVideo"></video>
+    <script>
+      let t;
+      navigator.getUserMedia(
+        { video: true },
+        function (stream) {
+          t = stream.getVideoTracks()[0];
+          console.log(
+            "Capabilities are " + JSON.stringify(t.getCapabilities())
+          );
+          const constraints = {
+            mandatory: { aspectRatio: 1.333333 },
+            optional: [{ width: { min: 640 } }, { height: { max: 400 } }],
+          };
+          t.applyConstraints(constraints).then(successCB).catch(failCB);
+        },
+        function (err) {
+          console.log("The following error occurred: " + err.name);
+        }
+      );
+
+      function successCB() {
+        console.log("Settings are " + JSON.stringify(t.getSettings()));
+      }
+
+      function failCB(err) {
+        console.log(err);
+      }
+    </script>
+  </body>
+</html>

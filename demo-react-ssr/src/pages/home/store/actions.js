@@ -8,11 +8,10 @@ const changeList = (list) => ({
 
 export const getHomeList = () => {
   return (dispatch) => {
-    return axios
-      .get("https://gitee.com/nooverfly/sample-data/raw/master/data.json")
-      .then((res) => {
-        const list = res.data;
-        dispatch(changeList(list));
-      });
+    return axios.get("http://localhost:13000/get-list").then((res) => {
+      const list = res.data.result;
+      console.log(list);
+      dispatch(changeList(list));
+    });
   };
 };

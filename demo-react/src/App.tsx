@@ -80,6 +80,7 @@ function App() {
     }
   };
 
+  console.log(routes);
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <Sider>

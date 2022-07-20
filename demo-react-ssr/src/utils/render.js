@@ -1,15 +1,25 @@
 import React from "react";
 import { renderToString } from "react-dom/server";
-import { StaticRouter, Route } from "react-router-dom";
+import { StaticRouter } from "react-router-dom/server";
+import { Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import Home from "../pages/home";
 
 export const render = (store, routes, req) => {
   const content = renderToString(
     <Provider store={store}>
-      <div>
-        <Home />
-      </div>
+      <StaticRouter location={req.path}>
+        <div>
+          <Routes>
+            {routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={<route.component />}
+              ></Route>
+            ))}
+          </Routes>
+        </div>
+      </StaticRouter>
     </Provider>
   );
 
@@ -20,6 +30,11 @@ export const render = (store, routes, req) => {
 				</head>
 				<body>
 					<div id="root">${content}</div>
+					<script>
+						window.context = {
+							state: ${JSON.stringify(store.getState())}
+						}
+					</script>
 					<script src="bundle.js"></script>
 				</body>
 			</html>
