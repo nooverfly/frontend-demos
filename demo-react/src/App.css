@@ -158,3 +158,19 @@
   transform: scale(0.9);
   transition: opacity 300ms, transform 300ms;
 }
+
+.full-content {
+  width: calc(100vw - 200px);
+  height: 100vh;
+}
+
+.full-content video {
+  width: 100%;
+  height: 100%;
+}
+
+.full-content #videoPlayOverlay {
+  position: absolute;
+  top: 0;
+  left: 300;
+}
