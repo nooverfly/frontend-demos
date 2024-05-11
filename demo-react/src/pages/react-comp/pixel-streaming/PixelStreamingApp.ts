@@ -693,17 +693,6 @@ export default class PixelStreamingApp {
           let allowConsoleCommands =
             settingsJSON.PixelStreaming.AllowPixelStreamingCommands;
           if (allowConsoleCommands === false) {
-            document.getElementById(
-              "encoder-min-qp-text"
-            ); /* ?.disabled = true;
-            document.getElementById("encoder-max-qp-text").disabled = true;
-            document.getElementById("webrtc-fps-text").disabled = true;
-            document.getElementById("webrtc-min-bitrate-text").disabled = true;
-            document.getElementById("webrtc-max-bitrate-text").disabled = true;
-            document.getElementById("show-fps-button").disabled = true;
-            document.getElementById("encoder-params-submit").disabled = true;
-            document.getElementById("webrtc-params-submit").disabled = true; */
-
             if (!document.getElementById("warning-elem-webrtc")) {
               let warningElem1 = document.createElement("p");
               warningElem1.innerText =
@@ -738,32 +727,7 @@ export default class PixelStreamingApp {
               "-AllowPixelStreamingCommands=false, sending console commands from browser to UE is disabled, including toggling FPS and changing encoder settings from the browser."
             );
           }
-          /* let disableLatencyTest =
-            settingsJSON.PixelStreaming.DisableLatencyTest;
-          if (disableLatencyTest) {
-            document.getElementById("test-latency-button").disabled = true;
-            document.getElementById("test-latency-button").title =
-              "Disabled by -PixelStreamingDisableLatencyTester=true";
-            console.warn(
-              "-PixelStreamingDisableLatencyTester=true, requesting latency report from the the browser to UE is disabled."
-            );
-          } */
         }
-        /* if (settingsJSON.Encoder) {
-          document.getElementById("encoder-min-qp-text").value =
-            settingsJSON.Encoder.MinQP;
-          document.getElementById("encoder-max-qp-text").value =
-            settingsJSON.Encoder.MaxQP;
-        }
-        if (settingsJSON.WebRTC) {
-          document.getElementById("webrtc-fps-text").value =
-            settingsJSON.WebRTC.FPS;
-          // reminder bitrates are sent in bps but displayed in kbps
-          document.getElementById("webrtc-min-bitrate-text").value =
-            settingsJSON.WebRTC.MinBitrate / 1000;
-          document.getElementById("webrtc-max-bitrate-text").value =
-            settingsJSON.WebRTC.MaxBitrate / 1000;
-        } */
       } else if (view[0] == ToClientMessageType.FileExtension) {
         processFileExtension(view);
       } else if (view[0] == ToClientMessageType.FileMimeType) {
@@ -1256,14 +1220,11 @@ export default class PixelStreamingApp {
     if (!playerElement) return;
 
     this.registerMouseEnterAndLeaveEvents(playerElement);
-    this.registerTouchEvents(playerElement);
+    // this.registerTouchEvents(playerElement);
   }
 
   registerMouseEnterAndLeaveEvents(playerElement: any) {
     playerElement.onmouseenter = (e: any) => {
-      if (print_inputs) {
-        console.log("mouse enter");
-      }
       let Data = new DataView(new ArrayBuffer(1));
       Data.setUint8(0, MessageType.MouseEnter);
       this.sendInputData(Data.buffer);
@@ -1271,9 +1232,6 @@ export default class PixelStreamingApp {
     };
 
     playerElement.onmouseleave = (e: any) => {
-      if (print_inputs) {
-        console.log("mouse leave");
-      }
       let Data = new DataView(new ArrayBuffer(1));
       Data.setUint8(0, MessageType.MouseLeave);
       this.sendInputData(Data.buffer);
@@ -1281,7 +1239,7 @@ export default class PixelStreamingApp {
     };
   }
 
-  registerTouchEvents(playerElement: HTMLVideoElement) {
+  /* registerTouchEvents(playerElement: HTMLVideoElement) {
     // We need to assign a unique identifier to each finger.
     // We do this by mapping each Touch object to the identifier.
     let fingers = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
@@ -1416,7 +1374,7 @@ export default class PixelStreamingApp {
         e.preventDefault();
       };
     }
-  }
+  } */
 
   emitMouseMove(x: number, y: number, deltaX: number, deltaY: number) {
     if (print_inputs) {

@@ -9,6 +9,7 @@ import microApp from "@micro-zoe/micro-app";
 fetch("/frontend-demos/microApp.json")
   .then((resp) => resp.json())
   .then((data: any) => {
+    debugger;
     const { apps, menus } = data;
     window.__micro_apps__ = apps.map(({ path, name, baseroute, url }: any) => {
       return {

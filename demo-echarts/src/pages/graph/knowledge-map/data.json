@@ -1,0 +1,149 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "name": "Frontend",
+      "symbolSize": 20,
+      "x": 0,
+      "y": 0,
+      "value": 28.685715,
+      "category": 0
+    },
+    {
+      "id": "1",
+      "name": "JavaScript",
+      "symbolSize": 5,
+      "x": 0,
+      "y": 1,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "3",
+      "name": "WebRTC",
+      "symbolSize": 5,
+      "x": 1,
+      "y": 1,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "8",
+      "name": "Ajax",
+      "symbolSize": 5,
+      "x": 1,
+      "y": 3,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "2",
+      "name": "CSS",
+      "symbolSize": 5,
+      "x": 0,
+      "y": 2,
+      "value": 28,
+      "category": 2
+    },
+    {
+      "id": "4",
+      "name": "Unreal",
+      "symbolSize": 20,
+      "x": 1,
+      "y": 0,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "5",
+      "name": "PixelStreaming",
+      "symbolSize": 5,
+      "x": 1,
+      "y": 2,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "6",
+      "name": "IoT",
+      "symbolSize": 20,
+      "x": 2,
+      "y": 0,
+      "value": 4,
+      "category": 4
+    },
+    {
+      "id": "7",
+      "name": "IPC(IP Camera)",
+      "symbolSize": 5,
+      "x": 2,
+      "y": 1,
+      "value": 4,
+      "category": 4
+    },
+    {
+      "id": "9",
+      "name": "Backend",
+      "symbolSize": 20,
+      "x": -1,
+      "y": 0,
+      "value": 4,
+      "category": 4
+    }
+  ],
+  "links": [
+    {
+      "source": "0",
+      "target": "1"
+    },
+    {
+      "source": "1",
+      "target": "3"
+    },
+    {
+      "source": "0",
+      "target": "2"
+    },
+    {
+      "source": "4",
+      "target": "5"
+    },
+    {
+      "source": "3",
+      "target": "5"
+    },
+    {
+      "source": "6",
+      "target": "7"
+    },
+    {
+      "source": "3",
+      "target": "7"
+    },
+    {
+      "source": "1",
+      "target": "8"
+    },
+    {
+      "source": "9",
+      "target": "8"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Category"
+    },
+    {
+      "name": "JavaScript"
+    },
+    {
+      "name": "CSS"
+    },
+    {
+      "name": "Unreal"
+    },
+    {
+      "name": "IoT"
+    }
+  ]
+}

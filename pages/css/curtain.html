@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #eee;
+      }
+      .container {
+        width: 750px;
+        height: 464px;
+        background-image: url(./images/mc.png);
+        margin-top: 50px;
+        position: relative;
+      }
+      .curtain {
+        width: 438px;
+        height: 732px;
+        background-image: url(./images/cl.png);
+        position: absolute;
+        top: 20px;
+        transform-origin: top left;
+      }
+      .left {
+        left: 88px;
+        transform: scaleX(0.1) scaleY(0.8);
+      }
+      .right {
+        left: 664px;
+        transform: rotateY(180deg) scaleX(0.1) scaleY(0.8);
+      }
+      .button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: #fff;
+        top: -10px;
+        box-shadow: 0 1px 2px -2px #00000029, 0 3px 6px #0000001f,
+          0 5px 12px 4px #00000017;
+      }
+      .btnLeft {
+        left: 88px;
+      }
+      .btnRight {
+        right: 88px;
+      }
+      .button div {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: rgb(61, 69, 92);
+        margin: auto;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="button btnLeft">
+        <div></div>
+      </div>
+      <div class="button btnRight">
+        <div></div>
+      </div>
+      <div class="curtain left"></div>
+      <div class="curtain right"></div>
+    </div>
+  </body>
+  <script>
+    // const ratio = 0.20;
+    const setRatio = (ratio) => {
+      document.getElementsByClassName(
+        "left"
+      )[0].style.transform = `scaleX(${ratio}) scaleY(0.8)`;
+      document.getElementsByClassName(
+        "right"
+      )[0].style.transform = `rotateY(180deg) scaleX(${ratio}) scaleY(0.8)`;
+      document.getElementsByClassName("btnLeft")[0].style.left = `${
+        88 + (ratio - 0.1) * 438
+      }px`;
+      document.getElementsByClassName("btnRight")[0].style.right = `${
+        88 + (ratio - 0.1) * 438
+      }px`;
+    };
+    let ratio = 0.1;
+    const animate = () => {
+      ratio += 0.005;
+      if (ratio < 0.65) {
+        setRatio(ratio);
+        requestAnimationFrame(animate);
+      }
+    };
+    setTimeout(() => {
+      animate();
+    }, 5000);
+  </script>
+</html>

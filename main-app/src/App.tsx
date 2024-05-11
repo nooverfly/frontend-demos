@@ -111,6 +111,7 @@ function App() {
   const [menus, setMenus] = useState<any[]>([]);
   const [childMenu, setChildMenu] = useState<any[]>([]);
   useEffect(() => {
+    debugger;
     const items: any[] = window.__micro_menus__.map((menu: any) => {
       if (menu.children) {
         return getItem(

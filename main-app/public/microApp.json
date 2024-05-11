@@ -1,6 +1,15 @@
 {
   "apps": [
     {
+      "path": "/zhongran/*",
+      "name": "demo-zhongran",
+      "baseroute": "/zhongran/",
+      "url": {
+        "dev": "http://localhost:8080/smart/data-visualization/publish/screen/237178",
+        "prod": "https://nooverfly.github.io/frontend-demos/demo-react"
+      }
+    },
+    {
       "path": "/react/*",
       "name": "demo-react",
       "baseroute": "/react/",
@@ -110,6 +119,10 @@
     }
   ],
   "menus": [
+    {
+      "label": "demo-zhongran",
+      "key": "zhongran"
+    },
     {
       "label": "demo-react",
       "key": "react"

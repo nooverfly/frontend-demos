@@ -2,6 +2,21 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import { Layout, Menu, MenuProps } from "antd";
 import { useEffect } from "react";
+import JSEncrypt from "jsencrypt";
+import CryptoJS from "crypto-js";
+
+var encryptor = new JSEncrypt(); // 创建加密对象实例
+//之前ssl生成的公钥，复制的时候要小心不要有空格
+const data = "Xl963852";
+const md5 = CryptoJS.MD5(data).toString();
+console.log("md5", md5);
+var pubKey = `-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDSHvhN6DKRyFkfnGDL1HsRmaoxTabNpa0fgk1P6sQQIxrwTg7YmL3gm8XOqHgAIaEk56hFvAi0YZtp1gY5rVZG/dWv24piGIUIoPHUGgjggYVKJ6cZT81S/Xd430k+OSkkrzqWgoG99PSHhhapJ13BdJCes+H9eCqURN2vCnT/9wIDAQAB
+-----END PUBLIC KEY-----`;
+encryptor.setPublicKey(pubKey); //设置公钥
+// @ts-ignore
+var rsaPassWord = encryptor.encrypt(md5).toString(); // 对内容进行加密
+console.log(rsaPassWord);
 
 const { Sider, Content } = Layout;
 // @ts-ignore
